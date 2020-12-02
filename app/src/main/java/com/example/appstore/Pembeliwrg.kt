@@ -5,10 +5,10 @@ import androidx.room.Insert
 import androidx.room.Query
 
 interface Pembeliwrg {
-    @Query("SELECT * FROM pemebeli")
-    fun getAll(): List<Jabatan>
+    @Query("SELECT * FROM pembeli")
+    fun getAll(): List<Pembeli>
 
-    @Query("SELECT * FROM pemebeli WHERE id_pembeli IN (:userIds)")
+    @Query("SELECT * FROM pembeli WHERE id_pembeli IN (:userIds)")
     fun loadAllByIds(userIds: IntArray): List<Pembeli>
 
     @Query("SELECT * FROM pembeli WHERE nama_pembeli LIKE :nama_pembeli AND " +
