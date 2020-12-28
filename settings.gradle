@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='App Store'
+rootProject.name = "uasoop2"

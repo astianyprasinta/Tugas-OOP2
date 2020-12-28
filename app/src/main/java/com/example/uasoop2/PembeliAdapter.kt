@@ -1,21 +1,14 @@
-package com.UAS.apps
+package com.example.uasoop2
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import org.w3c.dom.Text
-import com.example.UAS.Database.Pembeli
-import java.text.DecimalFormat
-import kotlinx.android.synthetic.main.adapter_helm.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.uasoop2.Database.Pembeli
 
-@Entity(tableName = "pembeli")
-data class Pembeli (
-        @PrimaryKey val id_pembeli: Int,
-        @ColumnInfo(name = "nama_pembeli") val nama_pembeli: Text?,
-        @ColumnInfo(name = "alamat") val alamat : Text?
+import kotlinx.android.synthetic.main.adapter_pembeli.view.*
 
-
-class Pembeliwrg (private val AllPembeli: ArrayList<Pembeli>, private val listener: OnAdapterListener) : RecyclerView.Adapter<PembeliAdapter.PembeliViewHolder>() {
+class PembeliAdapter (private val AllPembeli: ArrayList<Pembeli>, private val listener: OnAdapterListener) : RecyclerView.Adapter<PembeliAdapter.PembeliViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PembeliViewHolder {
         return PembeliViewHolder(
@@ -31,6 +24,12 @@ class Pembeliwrg (private val AllPembeli: ArrayList<Pembeli>, private val listen
         holder.view.text_merk.setOnClickListener {
             listener.onClick(pembeli)
         }
+        holder.view.icon_delete.setOnClickListener {
+            listener.onDelete(pembeli)
+        }
+        holder.view.icon_edit.setOnClickListener {
+            listener.onUpdate(pembeli)
+        }
     }
 
     class PembeliViewHolder(val view: View) : RecyclerView.ViewHolder(view)
@@ -43,6 +42,7 @@ class Pembeliwrg (private val AllPembeli: ArrayList<Pembeli>, private val listen
 
     interface OnAdapterListener {
         fun onClick(pembeli: Pembeli)
+        fun onDelete(pembeli: Pembeli)
+        fun onUpdate(pembeli: Pembeli)
     }
-} 
-)
+}

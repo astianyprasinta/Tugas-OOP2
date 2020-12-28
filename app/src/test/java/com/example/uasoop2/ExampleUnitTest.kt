@@ -1,4 +1,4 @@
-package com.example.appstore
+package com.example.uasoop2
 
 import org.junit.Test
 
