@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uasoop2">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.crudkoi">
 
     <application
         android:allowBackup="true"
@@ -8,8 +9,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Uasoop2">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.crudbaju.UserAdapter"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.crudbaju.BajuAdapter"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.crudbaju.EditUserActivity" />
+        <activity android:name="com.example.crudbaju.UserActivity" />
+        <activity android:name="com.example.crudbaju.EditBajuActivity" />
+        <activity android:name="com.example.crudbaju.BajuActivity" />
+        <activity android:name="com.example.crudbaju.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

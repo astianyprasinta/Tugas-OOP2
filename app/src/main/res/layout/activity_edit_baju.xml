@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".EditPembeliActivity">
+    tools:context="com.example.crudbaju.EditBajuActivity">
 
     <EditText
-        android:id="@+id/txt_merk"
+        android:id="@+id/txt_jenis"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:hint="Merk"
+        android:hint="Jenis"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_merk" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_jenis" />
 
     <EditText
         android:id="@+id/txt_harga"
@@ -40,23 +40,25 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_stok" />
 
     <Button
-        android:id="@+id/btn_savePembeli"
-        android:layout_width="0dp"
+        android:id="@+id/btn_saveBaju"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:text="SAVE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/custom_button"
         app:layout_constraintTop_toBottomOf="@+id/txt_harga" />
 
     <Button
-        android:id="@+id/btn_updatePembeli"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_updateBaju"
+        android:layout_width="91dp"
+        android:layout_height="45dp"
         android:layout_marginTop="17dp"
+        android:background="@drawable/custom_button"
         android:text="UPDATE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_savePembeli" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_saveBaju" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

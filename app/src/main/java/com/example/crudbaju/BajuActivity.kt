@@ -1,88 +1,86 @@
-package com.example.uasoop2
+package com.example.crudbaju
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.uasoop2.Database.AppRoomDB
-import com.example.uasoop2.Database.Constant
-import com.example.uasoop2.Database.Pembeli
-import kotlinx.android.synthetic.main.activity_pembeli.*
+import com.example.crudkoi.Database.AppRoomDB
+import com.example.crudkoi.Database.Constant
+import com.example.crudkoi.Database.Baju
+import com.example.crudkoi.R
+import kotlinx.android.synthetic.main.activity_baju.*
+import kotlinx.android.synthetic.main.activity_baju.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class PembeliActivity : AppCompatActivity() {
+class BajuActivity : AppCompatActivity() {
 
     val db by lazy { AppRoomDB(this) }
-    lateinit var pembeliAdapter: PembeliAdapter
+    lateinit var bajuAdapter: BajuAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pembeli)
+        setContentView(R.layout.activity_baju)
         setupListener()
         setupRecyclerView()
     }
 
     override fun onStart() {
         super.onStart()
-        loadPembeli()
+        loadBaju()
     }
 
-    fun loadPembeli(){
+    fun loadBaju(){
         CoroutineScope(Dispatchers.IO).launch {
-            val allPembeli = db.pembeliDao().getAllPembeli()
-            Log.d("PembeliActivity", "dbResponse: $allPembeli")
+            val allBaju = db.bajuDao().getAllBaju()
+            Log.d("BajuActivity", "dbResponse: $allBaju")
             withContext(Dispatchers.Main) {
-                pembeliAdapter.setData(allPembeli)
+                bajuAdapter.setData(allBaju)
             }
         }
     }
 
     fun setupListener() {
-        btn_createPembeli.setOnClickListener {
+        btn_createBaju.setOnClickListener {
            intentEdit(0, Constant.TYPE_CREATE)
         }
     }
 
     fun setupRecyclerView() {
-        pembeliAdapter = PembeliAdapter(arrayListOf(), object: PembeliAdapter.OnAdapterListener {
-            override fun onClick(pembeli: Pembeli) {
-                // read detail
-                intentEdit(pembeli.id, Constant.TYPE_READ)
+        bajuAdapter = BajuAdapter(arrayListOf(), object: BajuAdapter.OnAdapterListener {
+            override fun onClick(baju: Baju) {
+                intentEdit(baju.id, Constant.TYPE_READ)
             }
 
-            override fun onDelete(pembeli: Pembeli) {
-                // delete data
-                deleteDialog(pembeli)
+            override fun onDelete(baju: Baju) {
+                deleteDialog(baju)
             }
 
-            override fun onUpdate(pembeli: Pembeli) {
+            override fun onUpdate(baju: Baju) {
                 // edit data
-                intentEdit(pembeli.id, Constant.TYPE_UPDATE)
+                intentEdit(baju.id, Constant.TYPE_UPDATE)
             }
 
         })
-        list_pembeli.apply {
+        list_baju.apply {
             layoutManager = LinearLayoutManager(applicationContext)
-            adapter = pembeliAdapter
+            adapter = bajuAdapter
         }
     }
 
-    fun intentEdit(pembeliId: Int, intentType: Int ) {
+    fun intentEdit(bajuId: Int, intentType: Int ) {
         startActivity(
-            Intent(applicationContext, EditPembeliActivity::class.java)
-                .putExtra("intent_id", pembeliId)
+            Intent(applicationContext, EditBajuActivity::class.java)
+                .putExtra("intent_id", bajuId)
                 .putExtra("intent_type", intentType)
         )
     }
 
-    private fun deleteDialog(pembeli: Pembeli) {
+    private fun deleteDialog(baju: Baju) {
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.apply {
             setTitle("Konfirmasi")
@@ -93,8 +91,8 @@ class PembeliActivity : AppCompatActivity() {
             setPositiveButton("Hapus") { dialogInterface, i ->
                 dialogInterface.dismiss()
                 CoroutineScope(Dispatchers.IO).launch {
-                    db.pembeliDao().deletePembeli(pembeli)
-                    loadPembeli()
+                    db.bajuDao().deleteBaju(baju)
+                    loadBaju()
                 }
             }
         }

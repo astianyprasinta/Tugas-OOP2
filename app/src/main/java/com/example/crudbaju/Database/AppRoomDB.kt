@@ -1,16 +1,16 @@
-package com.example.uasoop2.Database
+package com.example.crudkoi.Database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(Pembeli::class, Admin::class), version = 1)
+@Database(entities = arrayOf(Baju::class, User::class), version = 1)
 
 abstract class AppRoomDB : RoomDatabase() {
 
-    abstract fun pembeliDao(): PembeliDao
-    abstract fun adminDao(): AdminDao
+    abstract fun bajuDao(): BajuDao
+    abstract fun userDao(): UserDao
 
     companion object {
 

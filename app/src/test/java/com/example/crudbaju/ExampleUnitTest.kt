@@ -1,4 +1,4 @@
-package com.example.uasoop2
+package com.example.crudbaju
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.uasoop2.Database
+package com.example.crudkoi.Database
 
 class Constant {
     companion object {
