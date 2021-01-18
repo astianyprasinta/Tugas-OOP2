@@ -1,4 +1,4 @@
-package com.example.crudkoi.Database
+package com.example.crudbaju.Database
 
 import android.content.Context
 import androidx.room.Database

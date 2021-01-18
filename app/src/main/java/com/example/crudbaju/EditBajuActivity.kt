@@ -3,10 +3,10 @@ package com.example.crudbaju
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.crudkoi.Database.AppRoomDB
-import com.example.crudkoi.Database.Constant
-import com.example.crudkoi.Database.Baju
-import com.example.crudkoi.R
+import com.example.crudbaju.Database.AppRoomDB
+import com.example.crudbaju.Database.Constant
+import com.example.crudbaju.Database.Baju
+import com.example.crudbaju.R
 import kotlinx.android.synthetic.main.activity_edit_baju.*
 import kotlinx.android.synthetic.main.activity_edit_baju.*
 import kotlinx.coroutines.CoroutineScope

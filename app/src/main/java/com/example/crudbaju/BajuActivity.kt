@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.crudkoi.Database.AppRoomDB
-import com.example.crudkoi.Database.Constant
-import com.example.crudkoi.Database.Baju
-import com.example.crudkoi.R
+import com.example.crudbaju.Database.AppRoomDB
+import com.example.crudbaju.Database.Constant
+import com.example.crudbaju.Database.Baju
+import com.example.crudbaju.R
 import kotlinx.android.synthetic.main.activity_baju.*
 import kotlinx.android.synthetic.main.activity_baju.*
 import kotlinx.coroutines.CoroutineScope

@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.crudkoi.Database.User
-import com.example.crudkoi.R
+import com.example.crudbaju.Database.User
+import com.example.crudbaju.R
 import kotlinx.android.synthetic.main.adapter_user.view.*
 
 

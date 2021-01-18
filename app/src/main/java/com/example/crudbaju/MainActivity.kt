@@ -3,7 +3,7 @@ package com.example.crudbaju
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.crudkoi.R
+import com.example.crudbaju.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
