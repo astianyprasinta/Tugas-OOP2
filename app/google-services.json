@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "772131735890",
+    "firebase_url": "https://crudbaju-8dc91-default-rtdb.firebaseio.com",
+    "project_id": "crudbaju-8dc91",
+    "storage_bucket": "crudbaju-8dc91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772131735890:android:34da5bb3f91e4ea7a8928b",
+        "android_client_info": {
+          "package_name": "com.example.crudbaju"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772131735890-tbcbsf4570keg9m655bguo9r9jq723qj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY1W6G4hpDOabczTWZ30fe8Fdk2pKIQRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772131735890-tbcbsf4570keg9m655bguo9r9jq723qj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
